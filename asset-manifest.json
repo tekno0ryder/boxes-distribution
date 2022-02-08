@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/boxes-distribution/static/css/main.073c9b0a.css",
-    "main.js": "/boxes-distribution/static/js/main.0c5902e0.js",
+    "main.js": "/boxes-distribution/static/js/main.a8c9fc98.js",
     "static/js/787.cc99f269.chunk.js": "/boxes-distribution/static/js/787.cc99f269.chunk.js",
     "index.html": "/boxes-distribution/index.html",
     "main.073c9b0a.css.map": "/boxes-distribution/static/css/main.073c9b0a.css.map",
-    "main.0c5902e0.js.map": "/boxes-distribution/static/js/main.0c5902e0.js.map",
+    "main.a8c9fc98.js.map": "/boxes-distribution/static/js/main.a8c9fc98.js.map",
     "787.cc99f269.chunk.js.map": "/boxes-distribution/static/js/787.cc99f269.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.0c5902e0.js"
+    "static/js/main.a8c9fc98.js"
   ]
 }
