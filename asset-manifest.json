@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/boxes-distribution/static/css/main.073c9b0a.css",
+    "main.js": "/boxes-distribution/static/js/main.1ed99276.js",
+    "static/js/787.cc99f269.chunk.js": "/boxes-distribution/static/js/787.cc99f269.chunk.js",
+    "index.html": "/boxes-distribution/index.html",
+    "main.073c9b0a.css.map": "/boxes-distribution/static/css/main.073c9b0a.css.map",
+    "main.1ed99276.js.map": "/boxes-distribution/static/js/main.1ed99276.js.map",
+    "787.cc99f269.chunk.js.map": "/boxes-distribution/static/js/787.cc99f269.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.1ed99276.js"
+  ]
+}
