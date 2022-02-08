@@ -48,11 +48,12 @@ function App() {
   const [polygon, setPolygon] = useState();
   const [markers, setMarkers] = useState();
 
-  const [maxAttempts, setMaxAttempts] = useState();
   const [target, setTarget] = useState();
+  const [maxAttempts, setMaxAttempts] = useState(1000);
+  const [minDistance, setMinDistance] = useState(30);
 
   const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
+    // const bounds = new window.google.maps.LatLngBounds();
     // map.fitBounds(bounds);
     setMap(map);
   }, []);
@@ -95,7 +96,7 @@ function App() {
         for (let i = 0; i < markers.length; i++) {
           const marker = markers[i];
           const distance = getPreciseDistance(marker, newMarker, 1);
-          if (distance < 200) {
+          if (distance < minDistance) {
             isOk = false;
             break;
           }
@@ -133,11 +134,7 @@ function App() {
               }}
             />
             {markers?.map((marker) => (
-              <Marker
-                key={`${marker.lat} ${marker.lng}`}
-                position={marker}
-                // clusterer={clusterer}
-              />
+              <Marker key={`${marker.lat} ${marker.lng}`} position={marker} />
             ))}
           </>
         </GoogleMap>
@@ -148,16 +145,23 @@ function App() {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
         }}
       >
         <label>
-          Target:
+          Target Num:
           <br />
           <input
-            title={"Target"}
             value={target?.toString()}
             onChange={(event) => setTarget(parseInt(event.target.value))}
+          />
+        </label>
+        <br />
+        <label>
+          Distance (m):
+          <br />
+          <input
+            value={minDistance?.toString()}
+            onChange={(event) => setMinDistance(parseInt(event.target.value))}
           />
         </label>
         <br />
@@ -165,13 +169,13 @@ function App() {
           Maximum Attempts:
           <br />
           <input
-            valu={maxAttempts?.toString()}
+            value={maxAttempts?.toString()}
             onChange={(event) => setMaxAttempts(parseInt(event.target.value))}
           />
         </label>
         <br />
         <button
-          style={{ margin: "auto" }}
+          style={{ width: 75 }}
           onClick={() => onCalculate()}
           disabled={!polygon || !maxAttempts || !target}
         >
