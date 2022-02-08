@@ -157,7 +157,7 @@ function App() {
         </label>
         <br />
         <label>
-          Distance (m):
+          Min Distance (m):
           <br />
           <input
             value={minDistance?.toString()}
