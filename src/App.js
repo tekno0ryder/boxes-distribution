@@ -7,12 +7,7 @@ import {
 } from "@react-google-maps/api";
 import "./App.css";
 import { useCallback, useState } from "react";
-import {
-  getBounds,
-  isPointInPolygon,
-  getPreciseDistance,
-  getDistance,
-} from "geolib";
+import { getBounds, isPointInPolygon, getPreciseDistance } from "geolib";
 
 const containerStyle = {
   width: "auto",
@@ -78,7 +73,6 @@ function App() {
       if (markers.length === target) {
         break;
       }
-      max += 1;
       const bounds = getBounds(polygon);
 
       const minX = bounds.minLat;
@@ -151,8 +145,8 @@ function App() {
           Target Num:
           <br />
           <input
-            value={target?.toString()}
-            onChange={(event) => setTarget(parseInt(event.target.value))}
+            value={target?.toString() ?? 0}
+            onChange={(event) => setTarget(parseInt(event.target.value || 0))}
           />
         </label>
         <br />
@@ -161,7 +155,9 @@ function App() {
           <br />
           <input
             value={minDistance?.toString()}
-            onChange={(event) => setMinDistance(parseInt(event.target.value))}
+            onChange={(event) =>
+              setMinDistance(parseInt(event.target.value || 0))
+            }
           />
         </label>
         <br />
@@ -170,7 +166,9 @@ function App() {
           <br />
           <input
             value={maxAttempts?.toString()}
-            onChange={(event) => setMaxAttempts(parseInt(event.target.value))}
+            onChange={(event) =>
+              setMaxAttempts(parseInt(event.target.value || 0))
+            }
           />
         </label>
         <br />
